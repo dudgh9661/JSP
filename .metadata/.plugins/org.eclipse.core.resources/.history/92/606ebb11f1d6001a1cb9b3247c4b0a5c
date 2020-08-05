@@ -1,0 +1,47 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class UserDAO {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	public UserDAO() {
+		try {
+			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbID = "root";
+			String dbPassword = "h165ud47s!";
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+			System.out.println("db connection success");
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public int login(String userID, String userPassword) {
+		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setNString(1,  userID);
+			rs = pstmt.executeQuery();
+			if( rs.next()) {
+				if( rs.getNString(1).equals(userPassword)) {
+					return 1; //success login
+				}
+				else {
+					return 0; //not equal password
+				}
+			}
+			return -1; //not exist userID
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -2;
+	}
+}
