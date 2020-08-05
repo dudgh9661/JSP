@@ -13,7 +13,6 @@ INDEX VERSION 1.131+/Users/kim_yeongho/Desktop/DeFold/국비지원/practiceJSP/.
 2048219729.index
 2461339508.index
 798479976.index
-3645688346.index
 2473055855.index
 1108962361.index
 3395147455.index
