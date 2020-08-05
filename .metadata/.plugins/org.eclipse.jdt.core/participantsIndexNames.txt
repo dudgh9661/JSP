@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/Users/kim_yeongho/Desktop/DeFold/국비지원/practiceJSP/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/255163817.index
+/board/src
+/Users/kim_yeongho/Desktop/DeFold/국비지원/practiceJSP/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/956628862.index
+/board/src
